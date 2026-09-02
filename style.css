@@ -1,7 +1,12 @@
 /* Nav: Aquí pondremos todo lo relacionado al nav */
 .container-fluid
 {
-        background-color: #24345c;
+        background-color: #203359;
+}
+
+.active
+{
+        padding: 15px;
 }
 
 .nav .navbar-nar
