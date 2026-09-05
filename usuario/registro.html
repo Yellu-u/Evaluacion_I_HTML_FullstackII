@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProperChile</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="../style.css">
+</head> 
+
+<nav class = "navbar navbar-default">
+  <div class = "container-fluid">
+    <div class = "navbar-header">
+      <img id="logo-color-img-nav" src="../assets/img/logos/logocolor.png" alt="logo-proper-color">
+    </div>
+
+    <ul class="nav navbar-nar">
+      <li class="active"><a href="/usuario/main.html">Home</a></li>
+      <li class="active"><a href="/usuario/productos.html">Productos</a></li>
+      <li class="active"><a href="/usuario/nosotros.html">Nosotros</a></li>
+      <li class="active"><a href="/usuario/contacto.html">Contacto</a></li>
+    </ul>
+
+    <!-- Se deja en standby el carrito-->
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</a></li>
+    </ul>
+
+  </div>
+</nav>
+
+<body>
+  <div class="row">
+    <div class="col-sm-3">
+
+    </div>
+
+    <div class="col-sm-6">
+      <div class="container-form">
+        <form>
+          <div class="jumbotron text-center"><h4>Registro de usuario</h4></div>
+
+          <div class="form-group">
+            <label for="nombre-completo">NOMBRE COMPLETO</label>
+            <input type="text" class="form-control" id="nombre-completo" placeholder="Ej: Juan Pérez">
+          </div>
+
+          <div class="form-group">
+            <label for="correo">CORREO</label>
+            <input type="email" class="form-control" id="correo" placeholder="juan@ejemplo.com">
+          </div>
+
+          <div class="form-group">
+            <label for="contrasena">CONTRASEÑA</label>
+            <input type="password" class="form-control" id="contrasena" placeholder="Ingresa tu contraseña">
+          </div>
+
+          <div class="form-group">
+            <label for="contrasena">CONFIRMAR CONTRASEÑA</label>
+            <input type="password" class="form-control" id="contrasena" placeholder="Repite tu contraseña">
+          </div>
+
+          <div class="form-group">
+            <label for="telefono">TELÉFONO (OPCIONAL)</label>
+            <input type="tel" class="form-control" id="telefono" placeholder="+569 1234 5678">
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="slcregion">-- REGIÓN --</label>
+                <select class="form-control" id="slcregion">
+                  <option value="">Seleccione una región</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="slccomuna">-- COMUNA --</label>
+                <select class="form-control" id="slccomuna" disabled>
+                  <option value="">Seleccione una comuna</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group text-center">
+            <a href="../usuario/main.html" class="btn btn-primary btn-lg px-5 mt-4">Registrarse</a>
+          </div>
+          </form>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      
+    </div>
+  </div>
+
+  <script>
+    // Se utilizarán solamente las regiones en las que el negocio hace repartos
+    // Para esto crearemos el siguiente objeto, que tendrá como clave el nombre de la región y el arreglo con sus comunas
+    const regionesYComunas = 
+    {
+      "Metropolitana de Santiago" : 
+      [ "Santiago", "Providencia", "Las condes", "Vitacura", "Lo Barnechea", "Ñunoa","La Reina",
+        "La Granja", "San Ramón", "El Bosque", "La Pintana", "La Florida", "Peñalolén", "Maipú", "Cerrillos", "Pudahuel", "Estación Central",
+        "Recoleta", "Independencia", "Conchalí"
+      ],
+      "Valparaíso" : 
+      [
+        "Valparaíso", "Viña del mar", "Concón", "Casablanca", "Puchuncaví", "Quintero", "Juan Fernández", "Quilpué", "Villa Alemana", "Limache", "Olmué",
+        "San Antonio", "Cartagena", "El Tabo", "El Quisco", "Algarrobo", "Santo Domingo", "Quillota", "La Calera", "Cruz", "Hijuelas", "Nogales", "San Felipe", "Llaillay",
+        "Catemu", "Panquehue", "Putaendo", "Santa María", "Los Andes", "San Esteban", "Calle Larga", "Rinconada", "La Ligua", "Cabildo", "Petorca", "Papudo", "Zapallar"
+      ],
+      "Región del Libertador General Bernardo O'Higgins" : 
+      [
+        "Rancagua", "Machalí", "Graneros", "San Francisco de Mostazal", "Doñihue", "Coltauco", "Coinco", "Olivar", "Requínoa", "Rengo", "Malloa", "Quinta de Tilcoco",
+        "San Vicente de Tagua Tagua", "Pichidegua", "Peumo", "Las Cabras", "San Fernando", "Santa Cruz", "Chimbarongo", "San Vicente", "Nancagua", "Placilla", "Palmilla",
+        "Peralillo", "Chépica", "Lolol", "Pumanque", "Pichilemu", "Marchigüe", "Litueche", "La Estrella", "Navidad", "Paredones"
+      ]
+    };
+
+    const slcregion = document.getElementById('slcregion');
+    const slccomuna = document.getElementById('slccomuna')
+
+    function cargarRegiones()
+    {
+      // Se obtienen las regiones del objeto creado anteriormente y se ordenan por nombre
+      const regiones = Object.keys(regionesYComunas).sort();
+
+      regiones.forEach(region => {
+        const option = document.createElement('option');
+        option.value = region;
+        option.textContent = region;
+        slcregion.appendChild(option)
+      });
+    }
+
+    function actualizarComuna()
+    {
+      const region = slcregion.value; // Se obtiene la comuna elegida
+
+      slccomuna.innerHTML = '<option value="">Seleccione una comuna</option>';
+
+      // Si se selecciona la opción 'Seleccione una región' deberá poner en comuna el mensaje a través de innerHTML
+      if (region === '')
+      {
+        slccomuna.disabled = true;
+        slccomuna.innerHTML = '<option value="">Primero seleccione una región</option>';
+        return;
+      }
+
+      const comunas = regionesYComunas[region];
+
+      slccomuna.disabled = false;
+
+      comunas.sort().forEach(comuna => 
+      {
+        const option = document.createElement('option');
+        option.value = comuna;
+        option.textContent = comuna;
+        slccomuna.appendChild(option);
+      });
+    }
+
+    slcregion.addEventListener('change', actualizarComuna);
+
+    cargarRegiones();
+  </script>
+</body>
+
+</html>

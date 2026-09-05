@@ -1,3 +1,9 @@
+/* Fonts */
+h4
+{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 /* Nav: Aquí pondremos todo lo relacionado al nav */
 .container-fluid
 {
@@ -9,12 +15,14 @@
         padding: 15px;
 }
 
-.nav .navbar-nar
-{
-        padding: 3;
-}
-
 #logo-color-img-nav
 {
         width: 100px;
+}
+
+/* Registro.html : Aquí van los estilos de los componentes de la página registro.html */
+.container-form
+{
+        background-color: #d6d6d6;
+        padding: 30px;
 }
