@@ -67,7 +67,7 @@
 
           <div class="mb-3">
             <label for="contrasena">CONFIRMAR CONTRASEÑA</label>
-            <input type="password" class="form-control" id="confirmar-contrasena" placeholder="Repite tu contraseña" required>
+            <input type="password" class="form-control" id="confirmarcontrasena" placeholder="Repite tu contraseña" required>
           </div>
 
           <div class="mb-3">
@@ -177,6 +177,20 @@
 
     cargarRegiones();
 
+    //Validamos la contraseñas, si no son iguales le devolvemos al usuario un mensaje
+    const contrasena = document.getElementById("contrasena");
+    const confirmarcontrasena = document.getElementById("confirmarcontrasena");
+
+    const formulario = document.querySelector("form");
+
+    formulario.addEventListener("submit", function(event)
+    {
+      if(contrasena.value !== confirmarcontrasena.value)
+      {
+        alert("Las contraseñas no coinciden");
+        event.preventDefault(); //sirve para detener el envío del formulario si las contraseñas no son iguales
+      }
+    });
   </script>
 </body>
 
