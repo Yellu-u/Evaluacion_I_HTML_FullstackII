@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ProperChile</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+                crossorigin="anonymous">
+        <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+        <!--NAVBAR-->
+        <nav class="navbar navbar-expand-sm navbar-proper">
+                <div class="container-fluid">
+
+                        <div class="navbar-header">
+                                <img id="logo-color-img-nav" src="../assets/img/logos/logocolor.png"
+                                        alt="logo-proper-color">
+                        </div>
+
+                        <ul class="navbar-nav">
+                                <li class="nav-item">
+                                        <a class="nav-link" href="../usuario/main.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="../usuario/productos.html">Productos</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="../usuario/nosotros.html">Nosotros</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="../usuario/contacto.html">Contacto</a>
+                                </li>
+                        </ul>
+
+                        <!-- Se deja en standby el carrito-->
+                        <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#"><span class="shopping-cart"></span> Carrito</a></li>
+                        </ul>
+                </div>
+        </nav>
+
+        <!--INICIO DE SESIÓN-->
+        <div class="row">
+                <div class="col-sm-3">
+
+                </div>
+
+                <div class="col-sm-6">
+                        <div class="container-foto">
+                                <img id="logo-proper" src="../assets/img/logos/logo.png">
+                        </div>
+
+                        <div class="container-form">
+                                <form>
+                                        <div class="contacto-titulo">
+                                                <h4>FORMULARIO DE CONTACTOS</h4>
+                                        </div>
+
+                                        <div class="mb-3">
+                                                <label for="nombre-completo">NOMBRE COMPLETO</label>
+                                                <input type="text" class="form-control" id="nombre-completo"
+                                                        placeholder="Ej: Juan Pérez" required>
+                                        </div>
+
+                                        <div class="mb-3">
+                                                <label for="correo">CORREO</label>
+                                                <input type="email" class="form-control" id="correo"
+                                                        placeholder="juan@ejemplo.com" required>
+                                        </div>
+
+                                        <div class="mb-3">
+                                                <label for="mensaje">MENSAJE</label>
+                                                <textarea class="form-control" rows="5" id="mensaje"
+                                                        required></textarea>
+                                        </div>
+
+                                        <div class="text-center">
+                                                <button type="submit" class="btn btn-primary btn-lg px-5 mt-4">Enviar
+                                                        Mensaje</button>
+                                        </div>
+                                </form>
+                        </div>
+                </div>
+
+                <div class="col-sm-3">
+                </div>
+        </div>
+
+        <script>
+
+        </script>
+</body>
+
+</html>
