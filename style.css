@@ -31,13 +31,13 @@ body
 
 /* Registro */
 
-.registro-titulo
+.registro-titulo 
 {
         text-align: center;
         margin-bottom: 30px;
 }
 
-.registro-titulo h4
+.registro-titulo h4 
 {
         font-family: Helvetica;
 }
@@ -52,7 +52,7 @@ body
 
 /* Inicio Sesión */
 
-#logo-proper
+#logo-proper 
 {
         width: 250px;
         margin: 0 auto;
