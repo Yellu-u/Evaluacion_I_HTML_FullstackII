@@ -49,3 +49,12 @@ body
         margin: 30px;
         border-radius: 15px;
 }
+
+/* Inicio Sesión */
+
+#logo-proper
+{
+        width: 250px;
+        margin: 0 auto;
+        display: block;
+}
