@@ -8,28 +8,38 @@
   <link rel="stylesheet" href="../style.css">
 </head> 
 
-<nav class = "navbar navbar-default">
-  <div class = "container-fluid">
-    <div class = "navbar-header">
-      <img id="logo-color-img-nav" src="../assets/img/logos/logocolor.png" alt="logo-proper-color">
-    </div>
-
-    <ul class="nav navbar-nar">
-      <li class="active"><a href="/usuario/main.html">Home</a></li>
-      <li class="active"><a href="/usuario/productos.html">Productos</a></li>
-      <li class="active"><a href="/usuario/nosotros.html">Nosotros</a></li>
-      <li class="active"><a href="/usuario/contacto.html">Contacto</a></li>
-    </ul>
-
-    <!-- Se deja en standby el carrito-->
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</a></li>
-    </ul>
-
-  </div>
-</nav>
-
 <body>
+  <!--NAVBAR-->
+  <nav class="navbar navbar-expand-sm navbar-proper">
+    <div class = "container-fluid">
+
+      <div class = "navbar-header">
+        <img id="logo-color-img-nav" src="../assets/img/logos/logocolor.png" alt="logo-proper-color">
+      </div>
+
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="../usuario/main.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../usuario/productos.html">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../usuario/nosotros.html">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../usuario/contacto.html">Contacto</a>
+        </li>
+      </ul>
+
+      <!-- Se deja en standby el carrito-->
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="shopping-cart"></span> Carrito</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--FORMULARIO-->
   <div class="row">
     <div class="col-sm-3">
 
@@ -38,62 +48,61 @@
     <div class="col-sm-6">
       <div class="container-form">
         <form>
-          <div class="jumbotron text-center"><h4>Registro de usuario</h4></div>
+          <div class="registro-titulo"><h4>REGISTRO DE USUARIO</h4></div>
 
-          <div class="form-group">
+          <div class="mb-3">
             <label for="nombre-completo">NOMBRE COMPLETO</label>
-            <input type="text" class="form-control" id="nombre-completo" placeholder="Ej: Juan Pérez">
+            <input type="text" class="form-control" id="nombre-completo" placeholder="Ej: Juan Pérez" required>
           </div>
 
-          <div class="form-group">
+          <div class="mb-3">
             <label for="correo">CORREO</label>
-            <input type="email" class="form-control" id="correo" placeholder="juan@ejemplo.com">
+            <input type="email" class="form-control" id="correo" placeholder="juan@ejemplo.com" required>
           </div>
 
-          <div class="form-group">
+          <div class="mb-3">
             <label for="contrasena">CONTRASEÑA</label>
-            <input type="password" class="form-control" id="contrasena" placeholder="Ingresa tu contraseña">
+            <input type="password" class="form-control" id="contrasena" placeholder="Ingresa tu contraseña" required>
           </div>
 
-          <div class="form-group">
+          <div class="mb-3">
             <label for="contrasena">CONFIRMAR CONTRASEÑA</label>
-            <input type="password" class="form-control" id="contrasena" placeholder="Repite tu contraseña">
+            <input type="password" class="form-control" id="confirmar-contrasena" placeholder="Repite tu contraseña" required>
           </div>
 
-          <div class="form-group">
+          <div class="mb-3">
             <label for="telefono">TELÉFONO (OPCIONAL)</label>
             <input type="tel" class="form-control" id="telefono" placeholder="+569 1234 5678">
           </div>
 
           <div class="row">
             <div class="col-md-6">
-              <div class="form-group">
-                <label for="slcregion">-- REGIÓN --</label>
-                <select class="form-control" id="slcregion">
+              <div class="mb-3">
+                <label for="slcregion" class="form-label">-- REGIÓN --</label>
+                <select class="form-control" id="slcregion" required>
                   <option value="">Seleccione una región</option>
                 </select>
               </div>
             </div>
 
             <div class="col-md-6">
-              <div class="form-group">
-                <label for="slccomuna">-- COMUNA --</label>
-                <select class="form-control" id="slccomuna" disabled>
+              <div class="mb-3">
+                <label for="slccomuna" class="form-label">-- COMUNA --</label>
+                <select class="form-control" id="slccomuna" disabled required>
                   <option value="">Seleccione una comuna</option>
                 </select>
               </div>
             </div>
           </div>
           
-          <div class="form-group text-center">
-            <a href="../usuario/main.html" class="btn btn-primary btn-lg px-5 mt-4">Registrarse</a>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-lg px-5 mt-4">Registrarse</button>
           </div>
           </form>
       </div>
     </div>
 
     <div class="col-sm-3">
-      
     </div>
   </div>
 
@@ -167,6 +176,7 @@
     slcregion.addEventListener('change', actualizarComuna);
 
     cargarRegiones();
+
   </script>
 </body>
 

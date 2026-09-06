@@ -1,28 +1,51 @@
 /* Fonts */
-h4
+
+body 
 {
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        background-color: white;
 }
 
-/* Nav: Aquí pondremos todo lo relacionado al nav */
-.container-fluid
+/* Nav */
+
+.navbar-proper 
 {
         background-color: #203359;
 }
 
-.active
+.navbar-proper .nav-link 
 {
-        padding: 15px;
+        color: #d6d6d6;
 }
 
-#logo-color-img-nav
+.navbar-proper .nav-link:hover 
+{
+        color: white;
+}
+
+#logo-color-img-nav 
 {
         width: 100px;
+        margin: 10px;
 }
 
-/* Registro.html : Aquí van los estilos de los componentes de la página registro.html */
-.container-form
+
+/* Registro */
+
+.registro-titulo
+{
+        text-align: center;
+        margin-bottom: 30px;
+}
+
+.registro-titulo h4
+{
+        font-family: Helvetica;
+}
+
+.container-form 
 {
         background-color: #d6d6d6;
-        padding: 30px;
+        padding: 50px;
+        margin: 30px;
+        border-radius: 15px;
 }
