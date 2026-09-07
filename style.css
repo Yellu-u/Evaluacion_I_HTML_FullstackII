@@ -210,3 +210,124 @@ h1 {
         padding: 20px;
         margin: 20px 90px;
 }
+
+/*Benja*/
+/* Fonts */
+
+body {
+        background-color: white;
+}
+
+/* Nav */
+
+.navbar-proper {
+        background-color: #203359;
+}
+
+.navbar-proper .nav-link {
+        color: #d6d6d6;
+}
+
+.navbar-proper .nav-link:hover {
+        color: white;
+}
+
+#logo-color-img-nav {
+        width: 100px;
+        margin: 10px;
+}
+
+
+/* Registro */
+
+.registro-titulo {
+        text-align: center;
+        margin-bottom: 30px;
+}
+
+.container-form {
+        background-color: #d6d6d6;
+        padding: 50px;
+        margin: 30px;
+        border-radius: 15px;
+}
+
+/* Inicio Sesión */
+
+.login-titulo {
+        text-align: center;
+        margin-bottom: 30px;
+}
+
+#logo-proper {
+        width: 250px;
+        margin: 0 auto;
+        display: block;
+}
+
+/* Contacto */
+
+.contacto-titulo {
+        text-align: center;
+        margin-bottom: 30px;
+}
+
+
+/*Benja*/
+/* Incio Sesión y Registrar (Benja)*/
+
+.container-text {
+        background-image: url("../Evaluacion_I_HTML_FullstackII/assets/img/fondo/fondo1.png");
+        background-size: cover;
+        background-position: center;
+        margin: 50px;
+        margin-bottom: 24px;
+        border-radius: 8px;
+        background-color: #c4c4c4;
+        padding: 24px;
+        text-align: center;
+}
+
+
+
+#contenedor_carta {
+        width: 200px;
+        text-align: center;
+
+}
+
+.container {
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 30px;
+
+
+}
+
+.Productos_lista {
+        background-color: #d1d0d0;
+        margin-bottom: 24px;
+        border-radius: 6px;
+        padding: 12px;
+        text-align: center;
+
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+}
+
+.informacion-producto {
+        font-size: 15px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+}
+
+.Productos_lista img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 5px;
+
+}
