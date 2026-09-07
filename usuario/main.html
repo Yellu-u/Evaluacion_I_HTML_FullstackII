@@ -36,7 +36,7 @@
 
             <!-- Se deja en standby el carrito-->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="shopping-cart"></span> Carrito</a></li>
+                <li><a href="#"><span id="contador-carrito" class="badge bg-primary">0</span> Carrito</a></li>
             </ul>
         </div>
     </nav>
@@ -105,6 +105,7 @@
                             contiene elementos protectores y suavizantes para tus manos
                         </p>
                         <p>$10.000</p>
+                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
                     </div>
                 </div>
             </div>
@@ -122,7 +123,7 @@
                             su composición permite adherirse más tiempo en contacto con múltiples superficies
                         </p>
                         <p>$12.000</p>
-
+                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
                     </div>
 
                 </div>
@@ -141,6 +142,7 @@
                             dejando textura suave. Para mejor resultado, aplique a la sombra
                         </p>
                         <p>$20.000</p>
+                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
                     </div>
                 </div>
             </div>
@@ -158,6 +160,7 @@
                             Su fórmula de rápida acción y fácil enjuague evita adherir residuos
                         </p>
                         <p>$12.000</p>
+                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
                     </div>
                 </div>
             </div>
@@ -175,6 +178,7 @@
                             Según su dilución, limpia en seco o húmedo. Puede usarse de forma manual o mecánica
                         </p>
                         <p>$8.000</p>
+                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
                     </div>
                 </div>
             </div>
@@ -193,6 +197,7 @@
                             lista para usar con un agradable aroma fresco
                         </p>
                         <p>$15.000</p>
+                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
                     </div>
                 </div>
             </div>
@@ -211,6 +216,7 @@
                             logra mantener siempre un entorno agradable y muy prolongado
                         </p>
                         <p>$12.000</p>
+                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
                     </div>
                 </div>
             </div>
@@ -229,6 +235,7 @@
                             realizar un lavado completo, sea manual o mecánico
                         </p>
                         <p>$15.000</p>
+                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
                     </div>
                 </div>
             </div>
@@ -247,6 +254,21 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        var totalenCarrito = 0;
+
+        function agregarAlCarrito() {
+            totalenCarrito = totalenCarrito + 1;
+            document.getElementById("contador-carrito").innerHTML = totalenCarrito;
+
+            var mensajeElemento = document.getElementById("mensaje-confirmacion");
+            mensajeElemento.innerHTML = "<em>!Producto agregado exitosamente!</em>";
+            mensajeElemento.style.color = "green";
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 

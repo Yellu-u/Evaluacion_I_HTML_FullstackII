@@ -439,3 +439,33 @@ h5 {
         color: #203359;
 
 }
+
+.container-form {
+        background-color: #d6d6d6;
+        padding: 50px;
+        margin: 30px;
+        border-radius: 15px;
+}
+
+.container-informacion {
+        background-color: #d6d6d6;
+        float: right;
+        padding: 50px;
+        margin: 30px;
+        border-radius: 15px;
+}
+
+.container.titulo {
+        background-color: #1e3054;
+        text-align: center;
+        background-position: center;
+}
+
+.contener-gerente {
+        background-color: #203359;
+
+}
+
+.navbar-proper2 {
+        background-color: #fefeff;
+}
