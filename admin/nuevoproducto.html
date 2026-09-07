@@ -67,8 +67,8 @@
                                         </div>
 
                                         <div class="mb-3">
-                                                <label for="id-producto">ID</label>
-                                                <input type="text" class="form-control" id="id-producto"
+                                                <label for="id">ID</label>
+                                                <input type="text" class="form-control" id="id"
                                                         placeholder="Ingrese id del producto" required>
                                         </div>
 
@@ -79,15 +79,32 @@
                                         </div>
 
                                         <div class=" mb-3">
-                                                <label for="precio-producto">PRECIO</label>
-                                                <input type="number" class="form-control" id="precio-producto"
-                                                        placeholder="Ingrese precio del producto" required>
+                                                <label for="descripcion-producto">DESCRIPCIÓN</label>
+                                                <input type="text" class="form-control" id="descripcion-producto"
+                                                        placeholder="Ingrese la descripcion del producto">
+                                        </div>
+
+                                        <div class=" mb-3">
+                                                <label for="precio">PRECIO</label>
+                                                <input type="number" class="form-control" id="precio"
+                                                        placeholder="Ingrese precio del producto" step="0.01" required>
                                         </div>
 
                                         <div class="mb-3">
                                                 <label for="stock">STOCK</label>
                                                 <input type="number" class="form-control" id="stock"
-                                                        placeholder="Ingrese stock disponible" required>
+                                                        placeholder="Ingrese stock disponible" step="1" required>
+                                        </div>
+
+                                        <div class="mb-3">
+                                                <label for="stock-critico">STOCK CRÍTICO</label>
+                                                <input type="number" class="form-control" id="stock-critico"
+                                                        placeholder="Ingrese stock crítico" step="1">
+                                        </div>
+
+                                        <div class="mb-3">
+                                                <label for="imagen">IMAGEN DEL PRODUCTO</label>
+                                                <input type="file" class="form-control" id="imagen" accept="image/*">
                                         </div>
 
                                         <div class="mb-3">
@@ -114,7 +131,58 @@
                 </div>
 
                 <script>
+                        const formulario = document.querySelector("form");
 
+                        formulario.addEventListener("submit", function (event) {
+
+                                const id = document.getElementById("id").value;
+                                const nombre = document.getElementById("nombre-producto").value;
+                                const descripcion = document.getElementById("descripcion-producto").value;
+                                const precio = document.getElementById("precio").value;
+                                const stock = document.getElementById("stock").value;
+                                const stockcritico = document.getElementById("stock-critico").value;
+                                const linea = document.getElementById("linea").value;
+
+                                if (id.length < 3) {
+                                        alert("El id debe tener mínimo 3 caracteres");
+                                        event.preventDefault();
+                                        return;
+                                }
+
+                                if (nombre.length > 100) {
+                                        alert("El id debe tener máximo 100 caracteres");
+                                        event.preventDefault();
+                                        return;
+                                }
+
+                                if (descripcion.length > 500) {
+                                        alert("El id debe tener máximo 500 caracteres");
+                                        event.preventDefault();
+                                        return;
+                                }
+
+                                if (precio === "0") {
+                                        alert("El producto será FREE");
+                                }
+
+                                if (precio < 0) {
+                                        alert("El precio no puede ser negativo");
+                                        event.preventDefault();
+                                        return;
+                                }
+
+                                if (stock < 0) {
+                                        alert("El stock no puede ser negativo");
+                                        event.preventDefault();
+                                        return;
+                                }
+
+                                if (stockcritico < 0) {
+                                        alert("El stock crítico no puede ser negativo");
+                                        event.preventDefault();
+                                        return;
+                                }
+                        });
                 </script>
 </body>
 
