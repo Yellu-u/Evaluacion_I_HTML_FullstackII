@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ProperChile</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="../style.css">
-</head> 
+</head>
 
 <body>
   <!--NAVBAR-->
   <nav class="navbar navbar-expand-sm navbar-proper">
-    <div class = "container-fluid">
+    <div class="container-fluid">
 
-      <div class = "navbar-header">
+      <div class="navbar-header">
         <img id="logo-color-img-nav" src="../assets/img/logos/logocolor.png" alt="logo-proper-color">
       </div>
 
@@ -48,7 +50,9 @@
     <div class="col-sm-6">
       <div class="container-form">
         <form>
-          <div class="registro-titulo"><h4>REGISTRO DE USUARIO</h4></div>
+          <div class="registro-titulo">
+            <h4>REGISTRO DE USUARIO</h4>
+          </div>
 
           <div class="mb-3">
             <label for="nombre-completo">NOMBRE COMPLETO</label>
@@ -67,7 +71,8 @@
 
           <div class="mb-3">
             <label for="contrasena">CONFIRMAR CONTRASEÑA</label>
-            <input type="password" class="form-control" id="confirmarcontrasena" placeholder="Repite tu contraseña" required>
+            <input type="password" class="form-control" id="confirmarcontrasena" placeholder="Repite tu contraseña"
+              required>
           </div>
 
           <div class="mb-3">
@@ -94,11 +99,11 @@
               </div>
             </div>
           </div>
-          
+
           <div class="text-center">
             <button type="submit" class="btn btn-primary btn-lg px-5 mt-4">Registrarse</button>
           </div>
-          </form>
+        </form>
       </div>
     </div>
 
@@ -109,32 +114,31 @@
   <script>
     // Se utilizarán solamente las regiones en las que el negocio hace repartos
     // Para esto crearemos el siguiente objeto, que tendrá como clave el nombre de la región y el arreglo con sus comunas
-    const regionesYComunas = 
+    const regionesYComunas =
     {
-      "Metropolitana de Santiago" : 
-      [ "Santiago", "Providencia", "Las condes", "Vitacura", "Lo Barnechea", "Ñunoa","La Reina",
-        "La Granja", "San Ramón", "El Bosque", "La Pintana", "La Florida", "Peñalolén", "Maipú", "Cerrillos", "Pudahuel", "Estación Central",
-        "Recoleta", "Independencia", "Conchalí"
-      ],
-      "Valparaíso" : 
-      [
-        "Valparaíso", "Viña del mar", "Concón", "Casablanca", "Puchuncaví", "Quintero", "Juan Fernández", "Quilpué", "Villa Alemana", "Limache", "Olmué",
-        "San Antonio", "Cartagena", "El Tabo", "El Quisco", "Algarrobo", "Santo Domingo", "Quillota", "La Calera", "Cruz", "Hijuelas", "Nogales", "San Felipe", "Llaillay",
-        "Catemu", "Panquehue", "Putaendo", "Santa María", "Los Andes", "San Esteban", "Calle Larga", "Rinconada", "La Ligua", "Cabildo", "Petorca", "Papudo", "Zapallar"
-      ],
-      "Región del Libertador General Bernardo O'Higgins" : 
-      [
-        "Rancagua", "Machalí", "Graneros", "San Francisco de Mostazal", "Doñihue", "Coltauco", "Coinco", "Olivar", "Requínoa", "Rengo", "Malloa", "Quinta de Tilcoco",
-        "San Vicente de Tagua Tagua", "Pichidegua", "Peumo", "Las Cabras", "San Fernando", "Santa Cruz", "Chimbarongo", "San Vicente", "Nancagua", "Placilla", "Palmilla",
-        "Peralillo", "Chépica", "Lolol", "Pumanque", "Pichilemu", "Marchigüe", "Litueche", "La Estrella", "Navidad", "Paredones"
-      ]
+      "Metropolitana de Santiago":
+        ["Santiago", "Providencia", "Las condes", "Vitacura", "Lo Barnechea", "Ñunoa", "La Reina",
+          "La Granja", "San Ramón", "El Bosque", "La Pintana", "La Florida", "Peñalolén", "Maipú", "Cerrillos", "Pudahuel", "Estación Central",
+          "Recoleta", "Independencia", "Conchalí"
+        ],
+      "Valparaíso":
+        [
+          "Valparaíso", "Viña del mar", "Concón", "Casablanca", "Puchuncaví", "Quintero", "Juan Fernández", "Quilpué", "Villa Alemana", "Limache", "Olmué",
+          "San Antonio", "Cartagena", "El Tabo", "El Quisco", "Algarrobo", "Santo Domingo", "Quillota", "La Calera", "Cruz", "Hijuelas", "Nogales", "San Felipe", "Llaillay",
+          "Catemu", "Panquehue", "Putaendo", "Santa María", "Los Andes", "San Esteban", "Calle Larga", "Rinconada", "La Ligua", "Cabildo", "Petorca", "Papudo", "Zapallar"
+        ],
+      "Región del Libertador General Bernardo O'Higgins":
+        [
+          "Rancagua", "Machalí", "Graneros", "San Francisco de Mostazal", "Doñihue", "Coltauco", "Coinco", "Olivar", "Requínoa", "Rengo", "Malloa", "Quinta de Tilcoco",
+          "San Vicente de Tagua Tagua", "Pichidegua", "Peumo", "Las Cabras", "San Fernando", "Santa Cruz", "Chimbarongo", "San Vicente", "Nancagua", "Placilla", "Palmilla",
+          "Peralillo", "Chépica", "Lolol", "Pumanque", "Pichilemu", "Marchigüe", "Litueche", "La Estrella", "Navidad", "Paredones"
+        ]
     };
 
     const slcregion = document.getElementById('slcregion');
     const slccomuna = document.getElementById('slccomuna')
 
-    function cargarRegiones()
-    {
+    function cargarRegiones() {
       // Se obtienen las regiones del objeto creado anteriormente y se ordenan por nombre
       const regiones = Object.keys(regionesYComunas).sort();
 
@@ -146,15 +150,13 @@
       });
     }
 
-    function actualizarComuna()
-    {
+    function actualizarComuna() {
       const region = slcregion.value; // Se obtiene la comuna elegida
 
       slccomuna.innerHTML = '<option value="">Seleccione una comuna</option>';
 
       // Si se selecciona la opción 'Seleccione una región' deberá poner en comuna el mensaje a través de innerHTML
-      if (region === '')
-      {
+      if (region === '') {
         slccomuna.disabled = true;
         slccomuna.innerHTML = '<option value="">Primero seleccione una región</option>';
         return;
@@ -164,8 +166,7 @@
 
       slccomuna.disabled = false;
 
-      comunas.sort().forEach(comuna => 
-      {
+      comunas.sort().forEach(comuna => {
         const option = document.createElement('option');
         option.value = comuna;
         option.textContent = comuna;
@@ -183,10 +184,8 @@
 
     const formulario = document.querySelector("form");
 
-    formulario.addEventListener("submit", function(event)
-    {
-      if(contrasena.value !== confirmarcontrasena.value)
-      {
+    formulario.addEventListener("submit", function (event) {
+      if (contrasena.value !== confirmarcontrasena.value) {
         alert("Las contraseñas no coinciden");
         event.preventDefault(); //sirve para detener el envío del formulario si las contraseñas no son iguales
       }
