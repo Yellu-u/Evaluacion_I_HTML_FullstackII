@@ -332,6 +332,12 @@ body {
 
 }
 
+footer {
+        display: block;
+}
+
+
+
 /* Configuración de productos*/
 
 .container-fluid h1 {
@@ -348,4 +354,11 @@ body {
         display: flex;
         flex-direction: column;
         flex-grow: 1;
+}
+
+.footer-proper {
+        background-color: #203359;
+        color: #ffffff;
+        padding: 15px;
+        margin-top: 60px;
 }
