@@ -331,3 +331,21 @@ body {
         border-radius: 5px;
 
 }
+
+/* Configuración de productos*/
+
+.container-fluid h1 {
+        font-family: Montserrat;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 70px;
+        margin-bottom: 20px;
+
+}
+
+.tituloProducto {
+        font-size: 25px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+}
