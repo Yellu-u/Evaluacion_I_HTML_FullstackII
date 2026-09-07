@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ProperChile</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+                crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
+                rel="stylesheet">
+        <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+        <!--INICIO DE SESIÓN-->
+        <div class="row">
+                <div class="col-sm-2 p-0">
+                        <div class="container-nav">
+                                <div class="container-foto">
+                                        <img id="logo-proper-nav" src="../assets/img/logos/logocolor.png">
+                                </div>
+
+                                <ul class="navbar-menu">
+                                        <li>
+                                                <a href="../admin/main.html">
+                                                        <img class="navbar-admin-icon"
+                                                                src="../assets/img/icons/home.png">
+                                                        <span>Home</span>
+                                                </a>
+                                        </li>
+
+                                        <li>
+                                                <a href="../admin/productos.html">
+                                                        <img class="navbar-admin-icon"
+                                                                src="../assets/img/icons/addproduct.png">
+                                                        <span>Productos</span>
+                                                </a>
+                                        </li>
+
+                                        <li>
+                                                <a href="../admin/clientes.html">
+                                                        <img class="navbar-admin-icon"
+                                                                src="../assets/img/icons/addclient.png">
+                                                        <span>Clientes</span>
+                                                </a>
+                                        </li>
+                                </ul>
+
+                                <div class="navbar-admin-logout">
+                                        <a href="../usuario/main.html">
+                                                <img class="navbar-admin-icon" src="../assets/img/icons/logout.png">
+                                                <span>Cerrar sesión</span>
+                                        </a>
+                                </div>
+                        </div>
+                </div>
+
+                <div class="col-sm-10 p-0">
+                        <div class="header">
+                                <h1 id="titulo">Clientes</h1>
+                        </div>
+
+                        <div class="container-clientes">
+                                <table class="tabla-clientes">
+
+                                        <thead>
+                                                <tr>
+                                                        <th>ID</th>
+                                                        <th>Nombre</th>
+                                                        <th>Correo</th>
+                                                        <th>Contraseña</th>
+                                                        <th>Teléfono</th>
+                                                        <th>Región</th>
+                                                        <th>Comuna</th>
+                                                        <th></th>
+                                                </tr>
+                                        </thead>
+
+                                        <tbody>
+
+                                                <tr>
+                                                        <td>jos.per</td>
+                                                        <td>Josefina Isidora Pérez Huerta</td>
+                                                        <td>jos.pereh@duocuc.cl</td>
+                                                        <td>rata1215</td>
+                                                        <td>9 3588 3717</td>
+                                                        <td>Metropolitana de Santiago</td>
+                                                        <td>Maipú</td>
+                                                        <td>
+                                                                <button class="btn-editar">Editar</button>
+                                                        </td>
+                                                </tr>
+
+                                                <tr>
+                                                        <td>ben.alf</td>
+                                                        <td>Benjamín Elías Pérez Alfaro</td>
+                                                        <td>ben.pereza@duocuc.cl</td>
+                                                        <td>darthvader7863</td>
+                                                        <td></td>
+                                                        <td>Metropolitana de Santiago</td>
+                                                        <td>Maipú</td>
+                                                        <td>
+                                                                <button class="btn-editar">Editar</button>
+                                                        </td>
+                                                </tr>
+
+                                                <tr>
+                                                        <td>sil.iba</td>
+                                                        <td>Silvana Ibacache Rifo</td>
+                                                        <td>sil.ibar@duocuc.cl</td>
+                                                        <td>roncito123</td>
+                                                        <td>9 1234 5678</td>
+                                                        <td>Metropolitana de Santiago</td>
+                                                        <td>Recoleta</td>
+                                                        <td>
+                                                                <button class="btn-editar">Editar</button>
+                                                        </td>
+                                                </tr>
+
+                                                <tr>
+                                                        <td>lui.car</td>
+                                                        <td>Luis Ignacio Carvajal Diaz</td>
+                                                        <td>lui.carv@duocuc.cl</td>
+                                                        <td>skibidi453</td>
+                                                        <td>9 4567 6789</td>
+                                                        <td>Valparaíso</td>
+                                                        <td>Viña del Mar</td>
+                                                        <td>
+                                                                <button class="btn-editar">Editar</button>
+                                                        </td>
+                                                </tr>
+
+                                        </tbody>
+
+                                </table>
+
+                                <a href="../admin/nuevocliente.html" class="btn-agregar-cliente">
+                                        + Agregar cliente
+                                </a>
+                        </div>
+
+                </div>
+
+                <script>
+
+                </script>
+</body>
+
+</html>
