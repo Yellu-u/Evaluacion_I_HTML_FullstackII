@@ -349,7 +349,7 @@ body {
 /* Incio Sesión y Registrar (Benja)*/
 
 .container-text {
-        background-image: url("../Evaluacion_I_HTML_FullstackII/assets/img/fondo/fondo1.png");
+        background-image: url("assets/img/fondo/fondo1.png");
         background-size: cover;
         background-position: center;
         margin: 50px;

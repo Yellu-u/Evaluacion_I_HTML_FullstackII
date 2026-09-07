@@ -45,7 +45,7 @@
                                                 <a href="../admin/clientes.html">
                                                         <img class="navbar-admin-icon"
                                                                 src="../assets/img/icons/addclient.png">
-                                                        <span>Clientes</span>
+                                                        <span>Usuarios</span>
                                                 </a>
                                         </li>
                                 </ul>
@@ -181,6 +181,10 @@
                                         alert("El stock crítico no puede ser negativo");
                                         event.preventDefault();
                                         return;
+                                }
+
+                                if (stock <= stockcritico) {
+                                        alert("Advertencia, el stock es menor al stock crítico del producto");
                                 }
                         });
                 </script>

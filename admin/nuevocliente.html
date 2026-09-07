@@ -45,7 +45,7 @@
                                                 <a href="../admin/clientes.html">
                                                         <img class="navbar-admin-icon"
                                                                 src="../assets/img/icons/addclient.png">
-                                                        <span>Clientes</span>
+                                                        <span>Usuarios</span>
                                                 </a>
                                         </li>
                                 </ul>
@@ -67,6 +67,13 @@
                                         </div>
 
                                         <div class="mb-3">
+                                                <label for="run">RUN</label>
+                                                <input type="text" class="form-control" id="run"
+                                                        placeholder="Ingrese su run sin puntos ni guión" required>
+                                        </div>
+
+
+                                        <div class="mb-3">
                                                 <label for="nombre-completo">NOMBRE COMPLETO</label>
                                                 <input type="text" class="form-control" id="nombre-completo"
                                                         placeholder="Ej: Juan Pérez" required>
@@ -85,7 +92,7 @@
                                         </div>
 
                                         <div class="mb-3">
-                                                <label for="contrasena">CONFIRMAR CONTRASEÑA</label>
+                                                <label for="confirmarcontrasena">CONFIRMAR CONTRASEÑA</label>
                                                 <input type="password" class="form-control" id="confirmarcontrasena"
                                                         placeholder="Repite tu contraseña" required>
                                         </div>
@@ -94,6 +101,23 @@
                                                 <label for="telefono">TELÉFONO (OPCIONAL)</label>
                                                 <input type="tel" class="form-control" id="telefono"
                                                         placeholder="+569 1234 5678">
+                                        </div>
+
+                                        <div class="mb-3">
+                                                <label for="direccion">DIRECCIÓN</label>
+                                                <input type="text" class="form-control" id="direccion"
+                                                        placeholder="Ingrese su dirección" required>
+                                        </div>
+
+                                        <div class="mb-3">
+                                                <label for="rol" class="form-label">-- ROL
+                                                        --</label>
+                                                <select class="form-control" id="rol" required>
+                                                        <option value="">Seleccione un rol</option>
+                                                        <option value="">Administrador</option>
+                                                        <option value="">Vendedor</option>
+                                                        <option value="">Cliente</option>
+                                                </select>
                                         </div>
 
                                         <div class="row">
@@ -123,7 +147,7 @@
 
                         <div class="text-center">
                                 <button type="submit" class="btn btn-primary btn-lg px-5 mt-4">Ingresar
-                                        Cliente</button>
+                                        Usuario</button>
                         </div>
 
                         <script>
@@ -193,16 +217,68 @@
 
                                 cargarRegiones();
 
-                                //Validamos la contraseñas, si no son iguales le devolvemos al usuario un mensaje
-                                const contrasena = document.getElementById("contrasena");
-                                const confirmarcontrasena = document.getElementById("confirmarcontrasena");
-
                                 const formulario = document.querySelector("form");
 
                                 formulario.addEventListener("submit", function (event) {
-                                        if (contrasena.value !== confirmarcontrasena.value) {
+
+                                        const run = document.getElementById("run").value;
+                                        const nombre = document.getElementById("nombre-completo").value;
+                                        const correo = document.getElementById("correo").value;
+                                        const contrasena = document.getElementById("contrasena").value;
+                                        const confirmarcontrasena = document.getElementById("confirmarcontrasena").value;
+                                        const telefono = document.getElementById("telefono").value;
+                                        const direccion = document.getElementById("direccion").value;
+
+                                        if (run.includes(".")) {
+                                                alert("El run no debe ser ingresado con puntos")
+                                                event.preventDefault();
+                                                return;
+                                        }
+                                        else if (run.includes("-")) {
+                                                alert("El run no debe ser ingresado con guión")
+                                                event.preventDefault();
+                                                return;
+                                        }
+
+                                        if (run.length < 7) {
+                                                alert("Ingrese un run de caracteres válidos")
+                                                event.preventDefault();
+                                                return;
+                                        }
+
+                                        if (run.length > 9) {
+                                                alert("Ingrese un run de caracteres válidos")
+                                                event.preventDefault();
+                                                return;
+                                        }
+
+                                        if (contrasena !== confirmarcontrasena) {
                                                 alert("Las contraseñas no coinciden");
                                                 event.preventDefault(); //sirve para detener el envío del formulario si las contraseñas no son iguales
+                                        }
+
+                                        if (nombre.length > 150) {
+                                                alert("El nombre no debe tener más de 150 caracteres")
+                                                event.preventDefault();
+                                                return;
+                                        }
+
+                                        if (!correo.endsWith("@duoc.cl") && !correo.endsWith("@profesor.duoc.cl") && !correo.endsWith("@gmail.com")) {
+                                                alert("El correo debe ser un @gmail.com o un @profesor.duoc.cl o un @duoc.cl")
+                                                event.preventDefault();
+                                                return;
+                                        }
+
+                                        if (correo.length > 100) {
+                                                alert("El correo no debe tener más de 100 caracteres")
+                                                event.preventDefault();
+                                                return;
+                                        }
+
+                                        if (direccion.length > 300) {
+                                                alert("La dirección no debe tener más de 300 caracteres")
+                                                event.preventDefault();
+                                                return;
                                         }
                                 });
                         </script>
