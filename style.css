@@ -469,3 +469,24 @@ h5 {
 .navbar-proper2 {
         background-color: #fefeff;
 }
+
+/* Quienes somos */
+
+.container-somos {
+        background-color: #d6d6d6;
+        padding: 10px;
+        width: 90%;
+        margin: 20px auto;
+        text-align: center;
+        border-radius: 15px;
+        font-family: Montserrat;
+}
+
+
+.contacto-gerente {
+        padding: 10px;
+        width: 60%;
+        margin: 5px auto;
+        text-align: center;
+        font-family: Montserrat;
+}
