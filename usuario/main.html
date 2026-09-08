@@ -32,11 +32,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../usuario/contacto.html">Contacto</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../usuario/blog.html">Blogs</a>
+                </li>
             </ul>
 
             <!-- Se deja en standby el carrito-->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span id="contador-carrito" class="badge bg-primary">0</span> Carrito</a></li>
+                <li><a href="../usuario/carrito.html"><span id="contador-carrito"
+                            class="badge bg-primary">0</span>Carrito</a></li>
             </ul>
         </div>
     </nav>
@@ -105,7 +109,10 @@
                             contiene elementos protectores y suavizantes para tus manos
                         </p>
                         <p>$10.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
+                        <button type="button"
+                            onclick="agregarAlCarrito(1, 'SUPER PLUS', 10000, 'Detergente para vajillas y eliminación de grasa')">
+                            Añadir al carrito
+                        </button>
                     </div>
                 </div>
             </div>
@@ -123,7 +130,10 @@
                             su composición permite adherirse más tiempo en contacto con múltiples superficies
                         </p>
                         <p>$12.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
+                        <button type="button"
+                            onclick="agregarAlCarrito(2, 'CLORO GEL', 12000, 'Limpieza profunda para baños y cocinas')">
+                            Añadir al carrito
+                        </button>
                     </div>
 
                 </div>
@@ -142,7 +152,10 @@
                             dejando textura suave. Para mejor resultado, aplique a la sombra
                         </p>
                         <p>$20.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
+                        <button type="button"
+                            onclick="agregarAlCarrito(3, 'CERA SPRAY', 20000, 'Cera Líquida para Autos')">
+                            Añadir al carrito
+                        </button>
                     </div>
                 </div>
             </div>
@@ -160,7 +173,10 @@
                             Su fórmula de rápida acción y fácil enjuague evita adherir residuos
                         </p>
                         <p>$12.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
+                        <button type="button"
+                            onclick="agregarAlCarrito(4, 'MOTOR GRASS', 12000, 'Desengrasante alto poder')">
+                            Añadir al carrito
+                        </button>
                     </div>
                 </div>
             </div>
@@ -197,7 +213,10 @@
                             lista para usar con un agradable aroma fresco
                         </p>
                         <p>$15.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
+                        <button type="button"
+                            onclick="agregarAlCarrito(5, 'FULL TAPIZ', 8000, 'Shampoo para alfombra y tapices')">
+                            Añadir al carrito
+                        </button>
                     </div>
                 </div>
             </div>
@@ -216,7 +235,10 @@
                             logra mantener siempre un entorno agradable y muy prolongado
                         </p>
                         <p>$12.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
+                        <button type="button"
+                            onclick="agregarAlCarrito(7, 'AROMA FRESH CAR', 12000, 'Aromatizante (Línea automotriz)')">
+                            Añadir al carrito
+                        </button>
                     </div>
                 </div>
             </div>
@@ -235,7 +257,10 @@
                             realizar un lavado completo, sea manual o mecánico
                         </p>
                         <p>$15.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
+                        <button type="button"
+                            onclick="agregarAlCarrito(8, 'REMANTEX', 15000, 'Eliminador de manchas (Casino y restaurant)')">
+                            Añadir al carrito
+                        </button>
                     </div>
                 </div>
             </div>
@@ -256,16 +281,54 @@
     </footer>
 
     <script>
-        var totalenCarrito = 0;
-
-        function agregarAlCarrito() {
-            totalenCarrito = totalenCarrito + 1;
-            document.getElementById("contador-carrito").innerHTML = totalenCarrito;
-
-            var mensajeElemento = document.getElementById("mensaje-confirmacion");
-            mensajeElemento.innerHTML = "<em>!Producto agregado exitosamente!</em>";
-            mensajeElemento.style.color = "green";
+        // 1. Función para obtener el carrito actualizado desde localStorage
+        function obtenerCarrito() {
+            return JSON.parse(localStorage.getItem('carritoProper')) || [];
         }
+
+        // 2. Función para agregar un producto al carrito
+        function agregarAlCarrito(id, nombre, precio, descripcion) {
+            let carrito = obtenerCarrito();
+
+            const productoExistente = carrito.find(item => item.id === id);
+
+            if (productoExistente) {
+                productoExistente.cantidad += 1;
+            } else {
+                carrito.push({
+                    id: id,
+                    nombre: nombre,
+                    precio: precio,
+                    descripcion: descripcion,
+                    cantidad: 1
+                });
+            }
+
+            localStorage.setItem('carritoProper', JSON.stringify(carrito));
+            actualizarContadorNavbar();
+
+            const mensajeElemento = document.getElementById("mensaje-confirmacion");
+            if (mensajeElemento) {
+                mensajeElemento.innerHTML = `<em>¡${nombre} agregado exitosamente!</em>`;
+                mensajeElemento.style.color = "green";
+            }
+        }
+
+        // 3. Función para sincronizar la suma total en el badge del navbar
+        function actualizarContadorNavbar() {
+            const carrito = obtenerCarrito();
+            //Se procesa un elemento el cual se reduce a un solo valor
+            const totalArticulos = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
+            //El acc es una variable temporal la cual guarda el resultado y lo suma
+            const contadorBadge = document.getElementById('contador-carrito');
+
+            if (contadorBadge) {
+                contadorBadge.innerText = totalArticulos;
+            }
+        }
+
+        // Ejecutar al cargar la página
+        actualizarContadorNavbar();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 

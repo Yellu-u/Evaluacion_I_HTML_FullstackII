@@ -32,11 +32,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../usuario/contacto.html">Contacto</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../usuario/blog.html">Blogs</a>
+                </li>
             </ul>
 
             <!-- Se deja en standby el carrito-->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span id="contador-carrito" class="badge bg-primary">0</span> Carrito</a></li>
+                <li><a href="../usuario/carrito.html"><span id="contador-carrito" class="badge bg-primary">0</span>
+                        Carrito</a></li>
             </ul>
         </div>
     </nav>
@@ -64,7 +68,10 @@
                             y grasas, contiene elementos protectores y suavizantes para tus manos.
                         </p>
                         <p>$10.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
+                        <button type="button"
+                            onclick="agregarAlCarrito(1, 'SUPER PLUS', 10000, 'Detergente para vajillas y eliminación de grasa')">
+                            Añadir al carrito
+                        </button>
                     </div>
                 </div>
             </div>
@@ -82,9 +89,11 @@
                             su composición permite adherirse más tiempo en contacto con múltiples superficies.
                         </p>
                         <p>$12.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
+                        <button type="button"
+                            onclick="agregarAlCarrito(2, 'CLORO GEL', 12000, 'Limpieza profunda para baños y cocinas')">
+                            Añadir al carrito
+                        </button>
                     </div>
-
                 </div>
             </div>
 
@@ -101,7 +110,10 @@
                             dejando textura suave. Para mejor resultado, aplique a la sombra.
                         </p>
                         <p>$20.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
+                        <button type="button"
+                            onclick="agregarAlCarrito(3, 'CERA SPRAY', 20000, 'Cera Líquida para Autos')">
+                            Añadir al carrito
+                        </button>
                     </div>
                 </div>
             </div>
@@ -119,7 +131,10 @@
                             Su fórmula de rápida acción y fácil enjuague evita adherir residuos.
                         </p>
                         <p>$12.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
+                        <button type="button"
+                            onclick="agregarAlCarrito(4, 'MOTOR GRASS', 12000, 'Desengrasante alto poder')">
+                            Añadir al carrito
+                        </button>
                     </div>
                 </div>
             </div>
@@ -137,7 +152,10 @@
                             Según su dilución, limpia en seco o húmedo. Puede usarse de forma manual o mecánica.
                         </p>
                         <p>$8.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
+                        <button type="button"
+                            onclick="agregarAlCarrito(5, 'FULL TAPIZ', 8000, 'Shampoo para alfombra y tapices')">
+                            Añadir al carrito
+                        </button>
                     </div>
                 </div>
             </div>
@@ -156,7 +174,10 @@
                             lista para usar con un agradable aroma fresco.
                         </p>
                         <p>$15.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
+                        <button type="button"
+                            onclick="agregarAlCarrito(6, 'MATIC', 15000, 'Detergente líquido (Línea Hogar)')">
+                            Añadir al carrito
+                        </button>
                     </div>
                 </div>
             </div>
@@ -175,7 +196,10 @@
                             logra mantener siempre un entorno agradable y muy prolongado.
                         </p>
                         <p>$12.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
+                        <button type="button"
+                            onclick="agregarAlCarrito(7, 'AROMA FRESH CAR', 12000, 'Aromatizante (Línea automotriz)')">
+                            Añadir al carrito
+                        </button>
                     </div>
                 </div>
             </div>
@@ -194,351 +218,262 @@
                             realizar un lavado completo, sea manual o mecánico.
                         </p>
                         <p>$15.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
+                        <button type="button"
+                            onclick="agregarAlCarrito(8, 'REMANTEX', 15000, 'Eliminador de manchas (Casino y restaurant)')">
+                            Añadir al carrito
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <!-- 9° Producto-->
-            <div class="col-sm-3">
-                <div class="Productos_lista">
-                    <img src="../assets/img/main/sinicar.jpg" alt="Producto 9">
-                    <br><br>
-                    <a href="#" class="tituloProducto">Sini Car</a>
-                    <div class="informacion-producto">
-                        <span>Limpiador sanitizante interiores</span>
-                        <br><br>
-                        <p>Producto diseñado para limpiar, proteger y sanitizar superficies
-                            interiores de tu vehículo de forma rápida y segura, dejando el
-                            ambiente desinfectado con un suave aroma.
-                        </p>
-                        <p>$8.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
-                    </div>
-                </div>
-            </div>
+            <!-- Sección de Accesorios -->
+            <div class="container-fluid">
+                <div class="row g-4">
+                    <h1> ACCESORIOS </h1>
 
-            <!-- 10° Producto-->
-            <div class="col-sm-3">
-                <div class="Productos_lista">
-                    <img src="../assets/img/main/lavaloza.jpg" alt="Producto 10">
-                    <br><br>
-                    <a href="#" class="tituloProducto">LAVALOZA SUPER PLUS</a>
-                    <div class="informacion-producto">
-                        <span>Lavaloza concentrado con aroma</span>
-                        <br><br>
-                        <p>Detergente para lavado manual de loza y utensilios.
-                            Contiene elementos protectores y suavizantes para las manos,
-                            con potente acción eliminando grasas, aceites y residuos difíciles.
-                        </p>
-                        <p>$15.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 11° Producto-->
-            <div class="col-sm-3">
-                <div class="Productos_lista">
-                    <img src="../assets/img/main/hidrosan.jpg" alt="Producto 11">
-                    <br><br>
-                    <a href="#" class="tituloProducto">HIDROSAN</a>
-                    <div class="informacion-producto">
-                        <span>Sanitizante líquido hidroalcohólico</span>
-                        <br><br>
-                        <p>Aromatizante hidroalcohólico para interiores de vehículos.
-                            Elaborado con finas esencias, agua desionizada y alcohol de perfumería,
-                            logra mantener siempre un entorno agradable y muy prolongado
-                        </p>
-                        <p>$12.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 12° Producto-->
-            <div class="col-sm-3">
-                <div class="Productos_lista">
-                    <img src="../assets/img/main/atrapol.jpg" alt="Producto 12">
-                    <br><br>
-                    <a href="#" class="tituloProducto">ATRAPOL</a>
-                    <div class="informacion-producto">
-                        <span> Líquido atrapador de polvo </span>
-                        <br><br>
-                        <p>Emulsión para tratamiento con mopas o traperos en el
-                            desempolvado de pisos. Recoge eficientemente el polvo
-                            suelto, prolongando la duración del encerado y el brillo.
-                        </p>
-                        <p>$12.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 13° Producto-->
-            <div class="col-sm-3">
-                <div class="Productos_lista">
-                    <img src="../assets/img/main/emul-wax.jpg" alt="Producto 13">
-                    <br><br>
-                    <a href="#" class="tituloProducto">EMUL WAX</a>
-                    <div class="informacion-producto">
-                        <span>Cera incolora abrillantable</span>
-                        <br><br>
-                        <p>Cera líquida emulsionada abrillantable de fácil aplicación
-                            en pisos duros y blandos expuestos a alto tráfico.
-                            Posee propiedades antideslizantes para brindar mayor seguridad al caminar.
-                        </p>
-                        <p>$12.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 14° Producto-->
-            <div class="col-sm-3">
-                <div class="Productos_lista">
-                    <img src="../assets/img/main/floor.jpg" alt="Producto 14">
-                    <br><br>
-                    <a href="#" class="tituloProducto">BRIGHT FLOOR</a>
-                    <div class="informacion-producto">
-                        <span>Abrillantador de piso flotante</span>
-                        <br><br>
-                        <p>Abrillantador líquido acrílico hidrosoluble y de fácil aplicación.
-                            Está diseñado especialmente para renovar y proteger pisos flotantes
-                            sometidos al uso y tráfico diario continuo.
-                        </p>
-                        <p>$12.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 15° Producto-->
-            <div class="col-sm-3">
-                <div class="Productos_lista">
-                    <img src="../assets/img/main/powerful.jpg" alt="Producto 15">
-                    <br><br>
-                    <a href="#" class="tituloProducto">POWERFUL CLEAN:</a>
-                    <div class="informacion-producto">
-                        <span>Detergente multiuso amoniacal</span>
-                        <br><br>
-                        <p>Fórmula multiuso amoniacal hiperconcentrada diseñada para
-                            limpiar pisos, paredes, acero inoxidable, carrocerías y casinos,
-                            eliminando eficazmente superficies muy manchadas por el uso diario.
-                        </p>
-                        <p>$12.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 16° Producto-->
-            <div class="col-sm-3">
-                <div class="Productos_lista">
-                    <img src="../assets/img/main/cristal-clean.jpg" alt="Producto 16">
-                    <br><br>
-                    <a href="#" class="tituloProducto">CRISTAL CLEAN</a>
-                    <div class="informacion-producto">
-                        <span>Limpiavidrios lavaparabrisas</span>
-                        <br><br>
-                        <p>Producto concentrado de alto rendimiento para superficies vítreas.
-                            Remueve fácilmente suciedad, humo, huellas y manchas rebeldes
-                            sin dejar ningún residuo, siendo de muy fácil uso.
-                        </p>
-                        <p>$12.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-    <!-- Sección de Accesorios -->
-    <div class="container-fluid">
-        <div class="row g-4">
-            <h1> ACCESORIOS </h1>
-
-            <!-- 1° Accesorio-->
-            <div class="col-3">
-                <div class="Productos_lista">
-                    <img src="../assets/img/main/carro1.jpg" alt="Accesorio 1">
-                    <br><br>
-                    <a href="#" class="tituloProducto">CARRO ESTRUJADOR 32Lt</a>
-                    <div class="informacion-producto">
-                        <span>Carro Estrujador 32 litros CEM-001</span>
-                        <br><br>
-                        <p>Carro estrujador de agua de polipropileno con
-                            exprimidor de mopas de posición lateral
-                        </p>
-                        <p>$10.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2° Accesorio-->
-            <div class="col-sm-3">
-                <div class="Productos_lista">
-                    <img src="../assets/img/main/carro2.jpg" alt="Accesorio 2">
-                    <br><br>
-                    <a href="#" class="tituloProducto">CARRO ESTRUJADOR 19Lt</a>
-                    <div class="informacion-producto">
-                        <span>Carro Estrujador 19 litros CEM-002</span>
-                        <br><br>
-                        <p>Carro estrujador de agua de polipropileno con
-                            exprimidor de mopas de posición lateral
-                        </p>
-                        <p>$12.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
-
+                    <!-- 1° Accesorio-->
+                    <div class="col-3">
+                        <div class="Productos_lista">
+                            <img src="../assets/img/main/carro1.jpg" alt="Accesorio 1">
+                            <br><br>
+                            <a href="#" class="tituloProducto">CARRO ESTRUJADOR 32Lt</a>
+                            <div class="informacion-producto">
+                                <span>Carro Estrujador 32 litros CEM-001</span>
+                                <br><br>
+                                <p>Carro estrujador de agua de polipropileno con
+                                    exprimidor de mopas de posición lateral
+                                </p>
+                                <p>$10.000</p>
+                                <button type="button"
+                                    onclick="agregarAlCarrito(9, 'CARRO ESTRUJADOR 32Lt', 10000, 'Carro Estrujador 32 litros CEM-001')">
+                                    Añadir al carrito
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
-                </div>
-            </div>
-
-            <!-- 3° Accesorio-->
-            <div class="col-sm-3">
-                <div class="Productos_lista">
-                    <img src="../assets/img/main/guantes1.jpg" alt="Accesorio 3">
-                    <br><br>
-                    <a href="#" class="tituloProducto">GUANTES NITRITO</a>
-                    <div class="informacion-producto">
-                        <span>Guante Verde de Nitrito (S - M - L)</span>
-                        <br><br>
-                        <p>Guante de nitrilo especialmente diseñado para proveer protección química,
-                            resistencia y versatilidad. Son resistentes a productos cáusticos,
-                            grasas de animales, aceites e hidrocarburos.
-                        </p>
-                        <p>$20.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
+                    <!-- 2° Accesorio-->
+                    <div class="col-sm-3">
+                        <div class="Productos_lista">
+                            <img src="../assets/img/main/carro2.jpg" alt="Accesorio 2">
+                            <br><br>
+                            <a href="#" class="tituloProducto">CARRO ESTRUJADOR 19Lt</a>
+                            <div class="informacion-producto">
+                                <span>Carro Estrujador 19 litros CEM-002</span>
+                                <br><br>
+                                <p>Carro estrujador de agua de polipropileno con
+                                    exprimidor de mopas de posición lateral
+                                </p>
+                                <p>$12.000</p>
+                                <button type="button"
+                                    onclick="agregarAlCarrito(10, 'CARRO ESTRUJADOR 19Lt', 12000, 'Carro Estrujador 19 litros CEM-002')">
+                                    Añadir al carrito
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- 4° Accesorio-->
-            <div class="col-sm-3">
-                <div class="Productos_lista">
-                    <img src="../assets/img/main/mopamf.jpg" alt="Accesorio 4 ">
-                    <br><br>
-                    <a href="#" class="tituloProducto">MOPA MICROFRIBRA</a>
-                    <div class="informacion-producto">
-                        <span>Mopa Humeda de Microfribra 300 Gramos</span>
-                        <br><br>
-                        <p>Mopa de microfibra con alto poder de absorción, adecuada para la
-                            limpieza de pisos en general y encerado de estos
-                        </p>
-                        <p>$12.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
+                    <!-- 3° Accesorio-->
+                    <div class="col-sm-3">
+                        <div class="Productos_lista">
+                            <img src="../assets/img/main/guantes1.jpg" alt="Accesorio 3">
+                            <br><br>
+                            <a href="#" class="tituloProducto">GUANTES NITRITO</a>
+                            <div class="informacion-producto">
+                                <span>Guante Verde de Nitrito (S - M - L)</span>
+                                <br><br>
+                                <p>Guante de nitrilo especialmente diseñado para proveer protección química,
+                                    resistencia y versatilidad. Son resistentes a productos cáusticos,
+                                    grasas de animales, aceites e hidrocarburos.
+                                </p>
+                                <p>$20.000</p>
+                                <button type="button"
+                                    onclick="agregarAlCarrito(11, 'GUANTES NITRITO', 20000, 'Guante Verde de Nitrito (S - M - L)')">
+                                    Añadir al carrito
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- 5° Accesorio-->
-            <div class="col-sm-3">
-                <div class="Productos_lista">
-                    <img src="../assets/img/main/mopaseca.jpg" alt="Accesorio 5">
-                    <br><br>
-                    <a href="#" class="tituloProducto">MOPA SECA</a>
-                    <div class="informacion-producto">
-                        <span>MOPA SECA BLANCA SLIP-ON REFORZADA (60cm-90cm)</span>
-                        <br><br>
-                        <p>Mopa seca slip-on ideal para todo tipo de pisos duros tales como
-                            porcelanato, cerámicos, laminados, Etc.
-                        </p>
-                        <p>$8.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
+                    <!-- 4° Accesorio-->
+                    <div class="col-sm-3">
+                        <div class="Productos_lista">
+                            <img src="../assets/img/main/mopamf.jpg" alt="Accesorio 4 ">
+                            <br><br>
+                            <a href="#" class="tituloProducto">MOPA MICROFRIBRA</a>
+                            <div class="informacion-producto">
+                                <span>Mopa Humeda de Microfribra 300 Gramos</span>
+                                <br><br>
+                                <p>Mopa de microfibra con alto poder de absorción, adecuada para la
+                                    limpieza de pisos en general y encerado de estos
+                                </p>
+                                <p>$12.000</p>
+                                <button type="button"
+                                    onclick="agregarAlCarrito(12, 'MOPA MICROFRIBRA', 12000, 'Mopa Humeda de Microfribra 300 Gramos')">
+                                    Añadir al carrito
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- 6° Accesorio-->
-            <div class="col-sm-3">
-                <div class="Productos_lista">
-                    <img src="../assets/img/main/escobillonsi.jpg" alt="Accesorio 6">
-                    <br><br>
-                    <a href="#" class="tituloProducto">ESCOBILLON CERDA</a>
-                    <div class="informacion-producto">
-                        <span>Escobillón Cerda Suave Interior</span>
-                        <br><br>
-                        <p>Escobillón de cerdas suaves son la mejor opción para barrer el polvo y las partículas
-                            ligeras,
-                            indicado para barrer lugares con mayor área libre y pisos encerados (áreas internas) No
-                            incluye mango
-                        </p>
-                        <p>$15.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
+                    <!-- 5° Accesorio-->
+                    <div class="col-sm-3">
+                        <div class="Productos_lista">
+                            <img src="../assets/img/main/mopaseca.jpg" alt="Accesorio 5">
+                            <br><br>
+                            <a href="#" class="tituloProducto">MOPA SECA</a>
+                            <div class="informacion-producto">
+                                <span>MOPA SECA BLANCA SLIP-ON REFORZADA (60cm-90cm)</span>
+                                <br><br>
+                                <p>Mopa seca slip-on ideal para todo tipo de pisos duros tales como
+                                    porcelanato, cerámicos, laminados, Etc.
+                                </p>
+                                <p>$8.000</p>
+                                <button type="button"
+                                    onclick="agregarAlCarrito(13, 'MOPA SECA', 8000, 'Mopa seca blanca slip-on reforzada')">
+                                    Añadir al carrito
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- 7° Accesorio-->
-            <div class="col-sm-3">
-                <div class="Productos_lista">
-                    <img src="../assets/img/main/toalla.jpg" alt="Accesorio 7">
-                    <br><br>
-                    <a href="#" class="tituloProducto">TOALLA FIBRA 29g</a>
-                    <div class="informacion-producto">
-                        <span>TOALLA FIBRA LARGA 29g</span>
-                        <br><br>
-                        <p>Toalla de una hoja, máxima resistencia, excelente absorción
-                            y calidad superior en 250 metros de papel. Junto a su dispensador
-                            de palanca permite un menor costo por uso y mayor higiene en tu baño y cocina.
-                        </p>
-                        <p>$12.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
+                    <!-- 6° Accesorio-->
+                    <div class="col-sm-3">
+                        <div class="Productos_lista">
+                            <img src="../assets/img/main/escobillonsi.jpg" alt="Accesorio 6">
+                            <br><br>
+                            <a href="#" class="tituloProducto">ESCOBILLON CERDA</a>
+                            <div class="informacion-producto">
+                                <span>Escobillón Cerda Suave Interior</span>
+                                <br><br>
+                                <p>Escobillón de cerdas suaves son la mejor opción para barrer el polvo y las partículas
+                                    ligeras, indicado para barrer lugares con mayor área libre y pisos encerados (áreas
+                                    internas)
+                                    No incluye mango
+                                </p>
+                                <p>$15.000</p>
+                                <button type="button"
+                                    onclick="agregarAlCarrito(14, 'ESCOBILLON CERDA', 15000, 'Escobillón Cerda Suave Interior')">
+                                    Añadir al carrito
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- 8° Accesorio-->
-            <div class="col-sm-3">
-                <div class="Productos_lista">
-                    <img src="../assets/img/main/papelh.jpg" alt="Accesorio 8">
-                    <br><br>
-                    <a href="#" class="tituloProducto">PAPEL HIGIENICO</a>
-                    <div class="informacion-producto">
-                        <span>PAPEL HIGIENICO FIBRA LARGA PLUS 21g</span>
-                        <br><br>
-                        <p>Papel higiénico de 500 metros, de alta resistencia y poder de absorción lo que favorece menor
-                            consumo,
-                            producto biodegradable. Destinado para uso diario y en distintas instalaciones.
-                            Utilízala junto a su dispensador para una mayor higiene Presentación: 6 X 500.
-                        </p>
-                        <p>$15.000</p>
-                        <button type="button" onclick="agregarAlCarrito()">Añadir al carrito</button>
+                    <!-- 7° Accesorio-->
+                    <div class="col-sm-3">
+                        <div class="Productos_lista">
+                            <img src="../assets/img/main/toalla.jpg" alt="Accesorio 7">
+                            <br><br>
+                            <a href="#" class="tituloProducto">TOALLA FIBRA 29g</a>
+                            <div class="informacion-producto">
+                                <span>TOALLA FIBRA LARGA 29g</span>
+                                <br><br>
+                                <p>Toalla de una hoja, máxima resistencia, excelente absorción
+                                    y calidad superior en 250 metros de papel. Junto a su dispensador
+                                    de palanca permite un menor costo por uso y mayor higiene en tu baño y cocina.
+                                </p>
+                                <p>$12.000</p>
+                                <button type="button"
+                                    onclick="agregarAlCarrito(15, 'TOALLA FIBRA 29g', 12000, 'TOALLA FIBRA LARGA 29g')">
+                                    Añadir al carrito
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8° Accesorio-->
+                    <div class="col-sm-3">
+                        <div class="Productos_lista">
+                            <img src="../assets/img/main/papelh.jpg" alt="Accesorio 8">
+                            <br><br>
+                            <a href="#" class="tituloProducto">PAPEL HIGIENICO</a>
+                            <div class="informacion-producto">
+                                <span>PAPEL HIGIENICO FIBRA LARGA PLUS 21g</span>
+                                <br><br>
+                                <p>Papel higiénico de 500 metros, de alta resistencia y poder de absorción lo que
+                                    favorece menor consumo, producto biodegradable. Destinado para uso diario y en
+                                    distintas instalaciones.
+                                    Utilízala junto a su dispensador para una mayor higiene Presentación: 6 X 500.
+                                </p>
+                                <p>$15.000</p>
+                                <button type="button"
+                                    onclick="agregarAlCarrito(16, 'PAPEL HIGIENICO', 15000, 'PAPEL HIGIENICO FIBRA LARGA PLUS 21g')">
+                                    Añadir al carrito
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
-    <!-- Footer de Proper -->
-    <footer class="footer-proper">
-        <div class="container text-center">
-            <h2>PROPER CHILE</h2>
-            <p class="mb-1">&copy Proper Chile. Fabricación Chilena de Excelencia.</p>
-            <div class="footer-links">
-                <a href="#">Inicio</a>|<a href="#">Nostros</a>|<a href="#">Contacto</a>
+        <!-- Footer de Proper -->
+        <footer class="footer-proper">
+            <div class="container text-center">
+                <h2>PROPER CHILE</h2>
+                <p class="mb-1">&copy Proper Chile. Fabricación Chilena de Excelencia.</p>
+                <div class="footer-links">
+                    <a href="#">Inicio</a>|<a href="#">Nostros</a>|<a href="#">Contacto</a>
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <script>
-        var totalenCarrito = 0;
 
-        function agregarAlCarrito() {
-            totalenCarrito = totalenCarrito + 1;
-            document.getElementById("contador-carrito").innerHTML = totalenCarrito;
 
-            var mensajeElemento = document.getElementById("mensaje-confirmacion");
-            mensajeElemento.innerHTML = "<em>!Producto agregado exitosamente!</em>";
-            mensajeElemento.style.color = "green";
-        }
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // 1. Función para obtener el carrito actualizado desde localStorage
+            function obtenerCarrito() {
+                return JSON.parse(localStorage.getItem('carritoProper')) || [];
+            }
+
+            // 2. Función para agregar un producto al carrito
+            function agregarAlCarrito(id, nombre, precio, descripcion) {
+                let carrito = obtenerCarrito();
+
+                const productoExistente = carrito.find(item => item.id === id);
+
+                if (productoExistente) {
+                    productoExistente.cantidad += 1;
+                } else {
+                    carrito.push({
+                        id: id,
+                        nombre: nombre,
+                        precio: precio,
+                        descripcion: descripcion,
+                        cantidad: 1
+                    });
+                }
+
+                localStorage.setItem('carritoProper', JSON.stringify(carrito));
+                actualizarContadorNavbar();
+
+                const mensajeElemento = document.getElementById("mensaje-confirmacion");
+                if (mensajeElemento) {
+                    mensajeElemento.innerHTML = `<em>¡${nombre} agregado exitosamente!</em>`;
+                    mensajeElemento.style.color = "green";
+                }
+            }
+
+            // 3. Función para sincronizar la suma total en el badge del navbar
+            function actualizarContadorNavbar() {
+                const carrito = obtenerCarrito();
+                //Se procesa un elemento el cual se reduce a un solo valor
+                const totalArticulos = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
+                //El acc es una variable temporal la cual guarda el resultado y lo suma
+                const contadorBadge = document.getElementById('contador-carrito');
+
+                if (contadorBadge) {
+                    contadorBadge.innerText = totalArticulos;
+                }
+            }
+
+            // Ejecutar al cargar la página
+            actualizarContadorNavbar();
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 
 

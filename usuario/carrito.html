@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProperChile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <!-- Navegador Superior -->
+    <nav class="navbar navbar-expand-sm navbar-proper">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <img id="logo-color-img-nav" src="../assets/img/logos/logocolor.png" alt="logo-proper-color">
+            </div>
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../usuario/main.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../usuario/productos.html">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../usuario/nosotros.html">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../usuario/contacto.html">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../usuario/blog.html">Blogs</a>
+                </li>
+            </ul>
+
+            <!-- Se deja en standby el carrito-->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span id="contador-carrito" class="badge bg-primary">0</span> Carrito</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+    <!--Mi carrito de Compra-->
+    <div>
+        <h1>Mi carrito de compras</h1>
+
+        <div class="cart-layout">
+            <!-- LISTA DE PRODUCTOS (Vaciamos esto y le ponemos el id "contenedor-carrito") -->
+            <div class="products-section" id="contenedor-carrito">
+                <!-- JavaScript inyectará los productos aquí automáticamente -->
+            </div>
+
+            <!-- RESUMEN DE PAGO -->
+            <div class="summary-section">
+                <div class="total-row">
+                    <span>TOTAL:</span>
+                    <!-- Le ponemos el id "total-precio" para que JS lo actualice -->
+                    <span id="total-precio">$ 0</span>
+                </div>
+
+                <button class="pay-btn">PAGAR</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        // 1. CARGAR DATOS 
+        let productosEnCarrito = JSON.parse(localStorage.getItem('carritoProper')) || [];
+
+        // 2. FUNCIÓN PARA SUMAR, RESTAR O ELIMINAR
+        function cambiarCantidad(idProducto, cambio) {
+            const index = productosEnCarrito.findIndex(prod => prod.id === idProducto);
+
+            if (index !== -1) {
+                productosEnCarrito[index].cantidad += cambio;
+
+                // Si la cantidad llega a 0, se elimina el producto del carrito
+                if (productosEnCarrito[index].cantidad <= 0) {
+                    productosEnCarrito.splice(index, 1);
+                }
+
+                mostarCarrito();
+            }
+        }
+
+        // 3. FUNCIÓN PARA MOSTRAR LOS PRODUCTOS
+        function mostarCarrito() {
+            const contenedor = document.getElementById('contenedor-carrito');
+            const totalPrecioElemento = document.getElementById('total-precio');
+            const contadorCarritoElemento = document.getElementById('contador-carrito');
+
+            contenedor.innerHTML = '';
+
+            // Si el carrito está vacío, muestra un mensaje
+            if (productosEnCarrito.length === 0) {
+                contenedor.innerHTML = '<p class="text-muted p-3">Tu carrito está vacío.</p>';
+                totalPrecioElemento.innerText = '$ 0';
+                if (contadorCarritoElemento) contadorCarritoElemento.innerText = '0';
+
+                // Guardar el carrito vacío en localStorage
+                localStorage.setItem('carritoProper', JSON.stringify([]));
+                return;
+            }
+
+            let totalSuma = 0;
+            let totalArticulos = 0;
+
+            productosEnCarrito.forEach(producto => {
+                totalSuma += (producto.precio * producto.cantidad);
+                totalArticulos += producto.cantidad;
+
+                const productoHTML = `
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h3>${producto.nombre}</h3>
+                        <p>${producto.descripcion}</p>
+                    </div>
+                    <div class="product-actions">
+                        <span class="price">$ ${producto.precio.toLocaleString('es-CL')}</span>
+                        <div class="quantity-control">
+                            <button class="qty-btn" onclick="cambiarCantidad(${producto.id}, -1)">-</button>
+                            <input type="text" value="${producto.cantidad}" class="qty-input" readonly>
+                            <button class="qty-btn" onclick="cambiarCantidad(${producto.id}, 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+                contenedor.innerHTML += productoHTML;
+            });
+
+            totalPrecioElemento.innerText = `$ ${totalSuma.toLocaleString('es-CL')}`;
+            if (contadorCarritoElemento) contadorCarritoElemento.innerText = totalArticulos;
+
+            localStorage.setItem('carritoProper', JSON.stringify(productosEnCarrito));
+        }
+
+        mostarCarrito();
+    </script>
+
+
+
+
+
+    <!-- Footer de Proper -->
+    <footer class="footer-proper">
+        <div class="container text-center">
+            <h2>PROPER CHILE</h2>
+            <p class="mb-1">&copy Proper Chile. Fabricación Chilena de Excelencia.</p>
+            <div class="footer-links">
+                <a href="#">Inicio</a>|<a href="#">Nostros</a>|<a href="#">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
