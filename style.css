@@ -529,7 +529,7 @@ h5 {
 .select-noticia {
         width: 50%;
         font-weight: bold;
-
+        border-radius: 0;
 
 }
 
@@ -537,4 +537,15 @@ h5 {
 .imagen-noticia {
         width: 100%;
         max-width: 100%;
+}
+
+.btn-info {
+        background-color: #203359;
+        color: #ffffff;
+        border: none;
+}
+
+.btn-info:hover {
+        background-color: #1a2947;
+        color: #ffffff;
 }
