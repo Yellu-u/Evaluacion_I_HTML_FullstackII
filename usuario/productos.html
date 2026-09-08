@@ -529,12 +529,7 @@
 
 
         <script>
-            // 1. Función para obtener el carrito actualizado desde localStorage
-            function obtenerCarrito() {
-                return JSON.parse(localStorage.getItem('carritoProper')) || [];
-            }
-
-            // 2. Función para agregar un producto al carrito
+            // 1. Función para agregar un producto al carrito
             function agregarAlCarrito(id, nombre, precio, descripcion) {
                 let carrito = obtenerCarrito();
 
@@ -551,29 +546,8 @@
                         cantidad: 1
                     });
                 }
-
-                localStorage.setItem('carritoProper', JSON.stringify(carrito));
-                actualizarContadorNavbar();
-
-                const mensajeElemento = document.getElementById("mensaje-confirmacion");
-                if (mensajeElemento) {
-                    mensajeElemento.innerHTML = `<em>¡${nombre} agregado exitosamente!</em>`;
-                    mensajeElemento.style.color = "green";
-                }
             }
 
-            // 3. Función para sincronizar la suma total en el badge del navbar
-            function actualizarContadorNavbar() {
-                const carrito = obtenerCarrito();
-                //Se procesa un elemento el cual se reduce a un solo valor
-                const totalArticulos = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
-                //El acc es una variable temporal la cual guarda el resultado y lo suma
-                const contadorBadge = document.getElementById('contador-carrito');
-
-                if (contadorBadge) {
-                    contadorBadge.innerText = totalArticulos;
-                }
-            }
 
             function verDetalle(imagen, nombre, subtitulo, descripcion, precio, id) {
                 document.getElementById('modalImagen').src = imagen;
@@ -590,9 +564,6 @@
                 const modal = new bootstrap.Modal(document.getElementById('modalProductoDinamico'));
                 modal.show();
             }
-
-            // Ejecutar al cargar la página
-            actualizarContadorNavbar();
         </script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>

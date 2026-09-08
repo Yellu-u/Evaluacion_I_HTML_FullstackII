@@ -48,105 +48,71 @@
 
 
 
-    <!--Mi carrito de Compra-->
-    <div>
-        <h1>Mi carrito de compras</h1>
-
-        <div class="cart-layout">
-            <!-- LISTA DE PRODUCTOS (Vaciamos esto y le ponemos el id "contenedor-carrito") -->
-            <div class="products-section" id="contenedor-carrito">
-                <!-- JavaScript inyectará los productos aquí automáticamente -->
-            </div>
-
-            <!-- RESUMEN DE PAGO -->
-            <div class="summary-section">
-                <div class="total-row">
-                    <span>TOTAL:</span>
-                    <!-- Le ponemos el id "total-precio" para que JS lo actualice -->
-                    <span id="total-precio">$ 0</span>
-                </div>
-
-                <button class="pay-btn">PAGAR</button>
-            </div>
-        </div>
+    <!-- CARRITO DE COMPRA --> 
+    <div class="container mt-5"> 
+        <h1>Mi carrito de compras</h1> 
+        <div class="cart-layout"> 
+            <!-- PRODUCTOS --> 
+             <div class="products-section"> 
+                <!-- PRODUCTO 1 --> 
+                 <div class="product-card"> 
+                    <div class="product-image"> 
+                        <img src="../assets/img/main/super-plus.jpg" alt="Producto 1" width="120"> 
+                    </div> 
+                    <div class="product-info"> 
+                        <h3>SUPER PLUS</h3> 
+                        <p> Removedor y eliminador de ceras</p> 
+                    </div> 
+                    <div class="product-actions"> 
+                        <span class="price"> $10.000 </span> 
+                        <div class="quantity-control"> 
+                            <button class="qty-btn"> - </button> 
+                            <input type="text" value="1" class="qty-input" readonly> 
+                            <button class="qty-btn"> + </button> 
+                        </div> 
+                    </div> 
+                </div> 
+                <!-- PRODUCTO 2 --> 
+                 <div class="product-card"> 
+                    <div class="product-image"> 
+                        <img src="../assets/img/main/remantex.jpg" alt="Producto 2" width="120"> 
+                    </div> 
+                    <div class="product-info"> 
+                        <h3>REMANTEX</h3> 
+                        <p> Eliminador de manchas </p> 
+                    </div> <div class="product-actions"> 
+                        <span class="price"> $15.000 </span> 
+                        <div class="quantity-control"> 
+                            <button class="qty-btn"> - </button> 
+                            <input type="text" value="1" class="qty-input" readonly> 
+                            <button class="qty-btn"> + </button> 
+                        </div> 
+                    </div> 
+                </div> 
+                <!-- PRODUCTO 3 --> 
+                 <div class="product-card"> 
+                    <div class="product-image"> 
+                        <img src="../assets/img/main/carro1.jpg" alt="Producto 3" width="220"> 
+                    </div> 
+                    <div class="product-info"> 
+                        <h3>CARRO ESTRUJADOR 32Lt</h3> 
+                        <p>Carro Estrujador 32 litros CEM-001</p> 
+                    </div> 
+                    <div class="product-actions"> 
+                        <span class="price"> $10.000 </span> 
+                        <div class="quantity-control"> 
+                            <button class="qty-btn"> - </button> 
+                            <input type="text" value="3" class="qty-input" readonly> 
+                            <button class="qty-btn"> + </button> 
+                        </div> 
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
     </div>
 
 
 
-    <script>
-        // 1. CARGAR DATOS 
-        let productosEnCarrito = JSON.parse(localStorage.getItem('carritoProper')) || [];
-
-        // 2. FUNCIÓN PARA SUMAR, RESTAR O ELIMINAR
-        function cambiarCantidad(idProducto, cambio) {
-            const index = productosEnCarrito.findIndex(prod => prod.id === idProducto);
-
-            if (index !== -1) {
-                productosEnCarrito[index].cantidad += cambio;
-
-                // Si la cantidad llega a 0, se elimina el producto del carrito
-                if (productosEnCarrito[index].cantidad <= 0) {
-                    productosEnCarrito.splice(index, 1);
-                }
-
-                mostarCarrito();
-            }
-        }
-
-        // 3. FUNCIÓN PARA MOSTRAR LOS PRODUCTOS
-        function mostarCarrito() {
-            const contenedor = document.getElementById('contenedor-carrito');
-            const totalPrecioElemento = document.getElementById('total-precio');
-            const contadorCarritoElemento = document.getElementById('contador-carrito');
-
-            contenedor.innerHTML = '';
-
-            // Si el carrito está vacío, muestra un mensaje
-            if (productosEnCarrito.length === 0) {
-                contenedor.innerHTML = '<p class="text-muted p-3">Tu carrito está vacío.</p>';
-                totalPrecioElemento.innerText = '$ 0';
-                if (contadorCarritoElemento) contadorCarritoElemento.innerText = '0';
-
-                // Guardar el carrito vacío en localStorage
-                localStorage.setItem('carritoProper', JSON.stringify([]));
-                return;
-            }
-
-            let totalSuma = 0;
-            let totalArticulos = 0;
-
-            productosEnCarrito.forEach(producto => {
-                totalSuma += (producto.precio * producto.cantidad);
-                totalArticulos += producto.cantidad;
-
-                const productoHTML = `
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-info">
-                        <h3>${producto.nombre}</h3>
-                        <p>${producto.descripcion}</p>
-                    </div>
-                    <div class="product-actions">
-                        <span class="price">$ ${producto.precio.toLocaleString('es-CL')}</span>
-                        <div class="quantity-control">
-                            <button class="qty-btn" onclick="cambiarCantidad(${producto.id}, -1)">-</button>
-                            <input type="text" value="${producto.cantidad}" class="qty-input" readonly>
-                            <button class="qty-btn" onclick="cambiarCantidad(${producto.id}, 1)">+</button>
-                        </div>
-                    </div>
-                </div>
-            `;
-                contenedor.innerHTML += productoHTML;
-            });
-
-            totalPrecioElemento.innerText = `$ ${totalSuma.toLocaleString('es-CL')}`;
-            if (contadorCarritoElemento) contadorCarritoElemento.innerText = totalArticulos;
-
-            localStorage.setItem('carritoProper', JSON.stringify(productosEnCarrito));
-        }
-
-        mostarCarrito();
-    </script>
 
 
 
