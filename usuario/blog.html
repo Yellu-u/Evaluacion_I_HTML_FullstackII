@@ -16,92 +16,143 @@
 
 <body>
 
-    <!-- Navegador Superior -->
-    <nav class="navbar navbar-expand-sm navbar-proper">
-        <div class="container-fluid">
+    <body>
+        <!-- Navegador Superior -->
+        <nav class="navbar navbar-expand-sm navbar-proper">
+            <div class="container-fluid">
 
-            <div class="navbar-header">
-                <img id="logo-color-img-nav" src="../assets/img/logos/logocolor.png" alt="logo-proper-color">
+                <div class="navbar-header">
+                    <img id="logo-color-img-nav" src="../assets/img/logos/logocolor.png" alt="logo-proper-color">
+                </div>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../usuario/main.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../usuario/productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../usuario/nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../usuario/contacto.html">Contacto</a>
+                    </li>
+                </ul>
+
+                <!-- Se deja en standby el carrito-->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span id="contador-carrito" class="badge bg-primary">0</span> Carrito</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Inicio Sesión Y Registrar -->
+        <div class="container mt-3 mb-2">
+            <div class="text-end">
+                <a href="login.html">Iniciar sesión</a> | <a href="registro.html">Registrar usuario</a>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- SECCIÓN DE NOTICIAS IMPORTANTES -->
+        <div class="container my-5">
+            <h2 class="titulo-principal">NOTICIAS IMPORTANTES</h2>
+
+            <!-- NOTICIA 1 -->
+            <div class="row align-items-center tarjeta-noticia">
+
+                <div class="col-md-6">
+                    <h3 class="titulo-noticia">Proveedor Oficial del Ejército de Chile</h3>
+                    <h5>"Disciplina y limpieza de nivel institucional"</h5>
+                    <p>
+                        Nos enorgullece ser proveedores oficiales de limpieza y sanitización para la academia del
+                        Ejército de Chile. Productos de alto rendimiento que cumplen con las exigencias más altas.
+                    </p>
+                    <a href="#" class="btn boton-noticia">VER CASO</a>
+
+                </div>
+
+                <!-- Columna Derecha (Imagen) -->
+                <div class="col-md-6">
+                    <img src="../assets/img/blog/militar.jpg" alt="Caso Curioso 1" class="imagen-noticia">
+                </div>
+
             </div>
 
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="../usuario/main.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../usuario/productos.html">Productos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../usuario/nosotros.html">Nosotros</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../usuario/contacto.html">Contacto</a>
-                </li>
-            </ul>
 
-            <!-- Se deja en standby el carrito-->
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span id="contador-carrito" class="badge bg-primary">0</span> Carrito</a></li>
-            </ul>
+            <!-- NOTICIA 2 -->
+            <div class="row align-items-center tarjeta-noticia">
+
+                <div class="col-md-6">
+                    <h3 class="titulo-noticia">Alianza Estratégica / Proveedor Oficial</h3>
+                    <h5>¡PROPER y [Nombre de la Empresa] unen fuerzas!</h5>
+                    <p>
+                        Nos enorgullece anunciar que ahora somos el proveedor oficial de limpieza y sanitización de
+                        [Nombre de la Empresa]. Juntos, garantizando espacios impecables y seguros.
+                    </p>
+                    <a href="#" class="btn boton-noticia">VER CASO</a>
+                </div>
+
+                <!-- Columna Derecha (Imagen) -->
+                <div class="col-md-6">
+                    <img src="../assets/img/blog/alianza.jpg" alt="Caso Curioso 1" class="imagen-noticia">
+                </div>
+
+            </div>
+
+
+
+            <!-- NOTICIA 3 -->
+            <div class="row align-items-center tarjeta-noticia">
+
+                <div class="col-md-6">
+                    <h3 class="titulo-noticia">Lanzamiento de Combos o Kits Especiales</h3>
+                    <h5>¡Lleva la experiencia PROPER en formato Kit!</h5>
+                    <p>
+                        Simplifica tu rutina con nuestros nuevos "Kits de Limpieza Inteligente".
+                        Hemos combinado nuestros mejores productos para tu hogar, auto o negocio a un precio especial.
+                        ¡Descúbrelos y ahorra!
+                    </p>
+                    <a href="#" class="btn boton-noticia">VER CASO</a>
+                </div>
+
+                <!-- Columna Derecha (Imagen) -->
+                <div class="col-md-6 ">
+                    <img src="../assets/img/blog/kits.jpg" alt="Caso Curioso 1" class="imagen-noticia">
+                </div>
+
+            </div>
+
         </div>
-    </nav>
 
-    <!-- Inicio Sesión Y Registrar -->
-    <div class="container mt-3 mb-2">
-        <div class="text-end">
-            <a href="login.html">Iniciar sesión</a> | <a href="registro.html">Registrar usuario</a>
-        </div>
-    </div>
+        <!-- Secció de links de fotos -->
+        Foto de <a
+            href="https://unsplash.com/es/@thesilvafocus?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Daniel
+            Silva</a> en <a
+            href="https://unsplash.com/es/fotos/un-grupo-de-militares-parados-uno-al-lado-del-otro-xIrlPx0GmBA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+        Foto de <a
+            href="https://unsplash.com/es/@hirmin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Max
+            Foto de Kleinen</a> en <a
+            href="https://unsplash.com/es/fotos/bola-clara-en-la-palma-de-la-mano-JVOURXLmlT0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+        Foto de <a
+            href="https://unsplash.com/es/@radission?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Radission
+            US</a> en <a
+            href="https://unsplash.com/es/fotos/dos-personas-dandose-la-mano-frente-a-una-computadora-portatil-_XeQ8XEWb4Q?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-
-
-
-    <!-- Carousel -->
-    <div id="demo" class="carousel slide" data-bs-ride="carousel">
-
-        <!-- Indicators/dots -->
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-        </div>
-
-        <!-- The slideshow/carousel -->
-        <div class="carousel-inner">
-            <div class="carousel-item">
-                <img src="la.jpg" alt="Los Angeles">
-                <div class="carousel-caption">
-                    <h3>Los Angeles</h3>
-                    <p>We had such a great time in LA!</p>
+        <!-- Footer de Proper -->
+        <footer class="footer-proper">
+            <div class="container text-center">
+                <h2>PROPER CHILE</h2>
+                <p class="mb-1">&copy Proper Chile. Fabricación Chilena de Excelencia.</p>
+                <div class="footer-links">
+                    <a href="#">Inicio</a>|<a href="#">Nostros</a>|<a href="#">Contacto</a>
                 </div>
             </div>
-
-            <div class="carousel-item">
-                <img src="la.jpg" alt="Los Angeles">
-                <div class="carousel-caption">
-                    <h3>Los Angeles</h3>
-                    <p>We had such a great time in LA!</p>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <img src="la.jpg" alt="Los Angeles">
-                <div class="carousel-caption">
-                    <h3>Los Angeles</h3>
-                    <p>We had such a great time in LA!</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Left and right controls/icons -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
-    </div>
-
-</body>
+        </footer>
+    </body>
 
 </html>

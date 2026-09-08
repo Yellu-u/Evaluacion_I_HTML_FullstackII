@@ -484,9 +484,57 @@ h5 {
 
 
 .contacto-gerente {
+        font-family: Montserrat;
         padding: 10px;
         width: 60%;
         margin: 5px auto;
         text-align: center;
-        font-family: Montserrat;
+
+}
+
+.carousel-slide {
+        max-width: 1800px;
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+}
+
+.titulo-principal {
+        text-align: center;
+        font-weight: bold;
+        /* Equivale a mb-5 */
+}
+
+
+
+/*ESTILO DE NOTICIAS.HTML*/
+.tarjeta-noticia {
+        background-color: #f8f9fa;
+        margin-bottom: 3rem;
+        padding: 1.5rem;
+
+}
+
+.titulo-noticia {
+        font-weight: bold;
+        margin-bottom: 1rem;
+}
+
+.texto-noticia {
+        margin-bottom: 1.5rem;
+}
+
+/* Estilo del botón selector */
+.select-noticia {
+        width: 50%;
+        font-weight: bold;
+
+
+}
+
+/* Estilo de la imagen */
+.imagen-noticia {
+        width: 100%;
+        max-width: 100%;
 }
